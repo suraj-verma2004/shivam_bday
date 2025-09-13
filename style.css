@@ -1,0 +1,290 @@
+/* --- General Body and Font Styles --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    max-height: 500px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(14, 24, 41, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #a5b4fc;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* --- Card and Section Styles --- */
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #4338ca;
+}
+
+.card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #c7d2fe;
+    flex-shrink: 0;
+}
+
+.profile-text {
+    text-align: center;
+}
+
+.highlight-quote {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: italic;
+    background-color: #eef2ff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Journey Grid */
+.journey-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.journey-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Masonry Gallery */
+.masonry-gallery {
+    column-count: 2;
+    column-gap: 1rem;
+}
+
+.gallery-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.gallery-image {
+    width: 100%;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.gallery-card p {
+    font-style: italic;
+    color: #475569;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Final Message Card */
+.final-message .section-title {
+    margin-bottom: 1rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #64748b;
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* --- Surprise Overlay Styles --- */
+#surprise-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(2, 6, 23, 0.95);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease-out;
+    padding: 1rem;
+}
+
+#surprise-prompt {
+    color: white; font-size: 1.5rem; text-align: center;
+    margin-bottom: 2rem; text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.gift-box { position: relative; width: 200px; height: 200px; cursor: pointer; }
+.gift-box .lid { position: absolute; width: 220px; height: 60px; background-color: #ef4444; top: 0; left: -10px; border-radius: 8px; transition: transform 0.5s ease-in-out, top 0.5s ease-in-out, opacity 0.5s 0.2s; z-index: 2; }
+.gift-box .box { position: absolute; width: 200px; height: 150px; background-color: #dc2626; bottom: 0; border-radius: 8px; transition: opacity 0.5s 0.3s; }
+.gift-box.open .lid { top: -200px; transform: rotate(20deg); opacity: 0; }
+.gift-box.open .box { opacity: 0; }
+#cake-container { position: absolute; opacity: 0; transform: scale(0.5); transition: opacity 0.5s 0.5s ease-out, transform 0.5s 0.5s ease-out; pointer-events: none; }
+.gift-box.open + #cake-container { opacity: 1; transform: scale(1); pointer-events: all; }
+.candle-flame { animation: glow 1.5s infinite alternate; }
+@keyframes glow {
+    from { filter: drop-shadow(0 0 2px #fef08a) drop-shadow(0 0 5px #facc15) drop-shadow(0 0 10px #f59e0b); }
+    to { filter: drop-shadow(0 0 5px #fef9c3) drop-shadow(0 0 10px #fde047) drop-shadow(0 0 20px #fbbf24); }
+}
+
+/* --- View Message Button (FIXED) --- */
+#view-message-btn {
+    opacity: 0;
+    pointer-events: none; /* Initially not clickable */
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: opacity 0.5s 0.2s ease-in, transform 0.2s ease;
+}
+
+#view-message-btn.visible {
+    opacity: 1;
+    pointer-events: all; /* Make it clickable when visible */
+}
+
+#view-message-btn:hover {
+    background-color: #4338ca;
+    transform: scale(1.05);
+}
+
+/* Initially hide main content */
+.main-content-hidden {
+    visibility: hidden;
+}
+
+/* --- Responsive Media Queries --- */
+@media (min-width: 768px) {
+    .hero-title { font-size: 3.5rem; }
+    .hero-subtitle { font-size: 1.5rem; }
+    .section-title { font-size: 2.5rem; }
+    .profile-card { flex-direction: row; text-align: left; }
+    .profile-pic { width: 200px; height: 200px; }
+    .profile-text { text-align: left; }
+    .journey-grid { grid-template-columns: repeat(3, 1fr); }
+    .masonry-gallery { column-count: 3; }
+}
+
+@media (min-width: 1024px) {
+    .masonry-gallery { column-count: 4; }
+}
